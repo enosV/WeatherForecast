@@ -22,14 +22,14 @@ onFormSubmit(event){
   event.preventDefault();
 
   this.props.fetchWeather(this.state.term);
-  this.setState({term:''});
+  this.setState({ term: '' });
 }
   render(){
     return(
       <form onSubmit={this.onFormSubmit} className="input-group">
         <input
           placeholder="Get a five day forecast in your favorite cities"
-          className="from-control"
+          className="form-control"
           value={this.state.term}
           onChange={this.onInputChange} />
         <span className="input-group-btn">
@@ -40,8 +40,8 @@ onFormSubmit(event){
   }
 }
 
-function mapDispatchToProps(dispatch){
-  return bindActionCreators({ fetchWeather} , dispatch);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchWeather}, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(SearchBar)
+export default connect(null, mapDispatchToProps)(SearchBar);
